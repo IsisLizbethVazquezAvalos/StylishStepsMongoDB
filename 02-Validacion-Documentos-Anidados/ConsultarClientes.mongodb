@@ -1,0 +1,6 @@
+//Usar la base de datos
+use("stylish-steps")
+
+//Consultar los registros
+//Es como si hicieramos un SELEC * FROM usuarios
+db.clientes.find()

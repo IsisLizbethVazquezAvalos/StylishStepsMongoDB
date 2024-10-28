@@ -1,0 +1,17 @@
+//Usar la base de datos
+use("stylish-steps")
+
+
+//insertar el documento en la coleccion de usuarios
+db.clientes.insertOne({
+    nombre: 'Isis Lizbeth',
+    apellidos: 'Vazquez Avalos',
+    correo: 'isis@gmail.com',
+    telefono:  ['353 53 3 1126'],
+    Origen: {
+        Ciudad: 'Sahuayo',
+        Region: 'Centro Occidente',
+        Pais: 'Mexico'
+    },
+    fecha_registro: new Date()
+})

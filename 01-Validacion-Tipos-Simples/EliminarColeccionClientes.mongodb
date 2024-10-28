@@ -1,0 +1,4 @@
+//usar la bd 
+use("stylish-steps")
+
+db.clientes.drop();

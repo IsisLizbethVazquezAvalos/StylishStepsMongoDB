@@ -1,0 +1,63 @@
+//Usar la base de datos
+use("stylish-steps")
+
+
+//Crear la colección de usuarios
+db.createCollection("clientes", {
+    validator:{
+        $jsonSchema:{
+            bsonType: 'object',
+            title: 'Validación del objeto clientes',
+            required: ['nombre', 'apellidos', 'correo'],
+            properties:{
+
+                nombre:{ 
+                    bsonType: 'string',
+                    description: 'Nombre del cliente',
+                },
+
+                apellidos:{
+                    bsonType: 'string',
+                    description: 'Apellidos del cliente'
+                },
+
+                correo:{ 
+                    bsonType: 'string',
+                    description: 'Correo electronico del cliente',
+                    pattern: "^[A-Za-z\\d.-]{1,}@[A-Za-z\\d.-]{1,}[.][A-Za-z\\d.-]{1,}$"
+                },
+
+                telefono:{
+                    bsonType: 'array',
+                    minItems: 1, //especificar el minimo requerido
+                    maxItems: 10, //especificar el maximo
+                    uniqueItems: true, //No telefonos repetidos
+                    items:{ bsonType: 'string' }
+                },
+
+                  //para aplicar este documento anidado, cambié la propiedad "pais" del documento de validación 01
+                  //por "origen", para poder agregar más atributos y cumplir con el obvjetivo de la tarea 
+                  // quer era agregar TODAS las validaciones vistas en clase.
+                Origen: {
+                    bsonType: 'object',
+                    title: 'Validación del objeto origen',
+                    required: ['Ciudad', 'Pais'],
+                    properties:{
+                        Ciudad: { bsonType: 'string'},
+                        Region: { bsonType: 'string'},
+                        Pais: { bsonType: 'string'}
+                    }
+                },
+
+                fecha_registro:{ bsonType: 'date' }
+            }
+        }
+    }
+})
+
+db.clientes.createIndex(
+    {correo: 1},//indexa por email
+    {unique: true} //solo acepta emali unicos 
+
+)
+

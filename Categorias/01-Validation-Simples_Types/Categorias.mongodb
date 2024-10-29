@@ -1,0 +1,20 @@
+
+use("StylishSteps");
+
+db.createCollection("Categorias",{
+    validator:{
+        $jsonSchema:{
+            bsonType:'object',
+            title:'validacion de categorias',
+            required:['CategoriaID','nombre_categoria','stock_categoria'],
+            properties:{
+                CategoriaID:{bsonType:'int'},
+                nombre_categoria:{bsonType:'string', description:'Nombre de la categoria'},
+                descripcion:{bsonType:'string', description:'breve descripcion de la categoria'},
+                stock_categoria:{bsonType:'int',minimum:1,description:'stock disponible en esa categoria'},
+            }
+        }
+    }
+})
+
+

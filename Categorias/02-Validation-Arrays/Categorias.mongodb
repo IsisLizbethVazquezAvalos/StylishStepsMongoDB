@@ -1,0 +1,42 @@
+
+use("StylishSteps");
+
+// Para la implementacion de los objetos anidados implementamos Promocion,Especificaciones
+// que era lo que mas se adaptaba para poder utilizar este tipo de validacion
+db.createCollection("Categorias", {
+    validator: {
+        $jsonSchema: {
+            bsonType: 'object',
+            title: 'validacion de categorias',
+            required: ['CategoriaID', 'nombre_categoria', 'stock_categoria'],
+            properties: {
+                CategoriaID: {bsonType: 'int'},
+                nombre_categoria: {bsonType: 'string', description: 'Nombre de la categoria'},
+                descripcion: {bsonType: 'string', description: 'Breve descripcion de la categoria'},
+                stock_categoria: {bsonType: 'int', description: 'Stock disponible en esa categoria'},
+                promocion: {
+                    bsonType: 'object',
+                    title: 'validacion de promocion',
+                    properties: {
+                        //descuento: {bsonType: 'double', description: 'Descuento en porcentaje'},
+                        fecha_inicio: {bsonType: 'date', description: 'Fecha de inicio de la promoción'},
+                        fecha_fin: {bsonType: 'date', description: 'Fecha de fin de la promoción'}
+                    }
+                },
+                especificaciones: {
+                    bsonType: 'object',
+                    title: 'validacion de especificaciones',
+                    properties: {
+                        materiales: {bsonType: 'array', items: {bsonType: 'string'}, description: 'Lista de materiales comunes'},
+                        colores: {bsonType: 'array', items: {bsonType: 'string'}, description: 'Lista de colores disponibles'},
+                        estilos: {bsonType: 'array', items: {bsonType: 'string'}, description: 'Estilos o tipos de huaraches en la categoría'}
+                    }
+                }
+            }
+        }
+    }
+})
+
+
+
+

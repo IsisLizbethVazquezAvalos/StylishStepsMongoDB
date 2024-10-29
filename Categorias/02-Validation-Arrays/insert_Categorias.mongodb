@@ -1,0 +1,18 @@
+
+use("StylishSteps");
+
+db.Categorias.insertOne({
+    CategoriaID: 3,
+    nombre_categoria: 'Huaraches Artesanales',
+    descripcion: 'Huaraches hechos a mano con materiales naturales',
+    stock_categoria: 80,
+    promocion: {
+        fecha_inicio: new Date('2024-11-01'),
+        fecha_fin: new Date('2024-11-30')
+    },
+    especificaciones: {
+        materiales: ['cuero', 'yute', 'piel'],
+        colores: ['marrón', 'negro', 'beige'],
+        estilos: ['sandalia', 'cerrado', 'con tiras']
+    }
+})

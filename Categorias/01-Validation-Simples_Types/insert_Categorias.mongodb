@@ -1,0 +1,9 @@
+
+use("StylishSteps");
+
+db.Categorias.insertOne({
+    CategoriaID:1,
+    nombre_categoria:'Caballero',
+    descripcion:'Huaraches para caballero',
+    stock_categoria:20,
+})

@@ -1,0 +1,38 @@
+
+use("StylishSteps");
+
+db.createCollection("Carrito", {
+    validator: {
+        $jsonSchema: {
+            bsonType: 'object',
+            title: 'validacion de carrito',
+            required: ['id_carrito', 'id_cliente', 'productos'],
+            properties: {
+                id_carrito: {bsonType: 'int', description: 'Identificador único del carrito'},
+                id_cliente: {bsonType: 'int', description: 'ID del cliente que agregó productos al carrito'},
+                productos: {
+                    bsonType: 'array',
+                    minItems: 1,
+                    items: {
+                        bsonType: 'object',
+                        required: ['id_producto', 'nombre_producto', 'cantidad', 'precio_unitario'],
+                        properties: {
+                            id_producto: {bsonType: 'int', description: 'ID del producto agregado'},
+                            nombre_producto: {bsonType: 'string', description: 'Nombre del producto'},
+                            cantidad: {bsonType: 'int', minimum: 1, description: 'Cantidad de productos'},
+                            precio: {bsonType: 'double', description: 'Precio por unidad del producto'},
+                            img_producto: {bsonType: 'string', description: 'Imagen del producto'}
+                        }
+                    }
+                },
+                fecha_agregado: {bsonType: 'date', description: 'Fecha en la que el producto fue añadido al carrito'}
+            }
+        }
+    }
+})
+
+
+db.Carrito.createIndex(
+    {id_cliente: 1}, 
+    {unique: true}
+)

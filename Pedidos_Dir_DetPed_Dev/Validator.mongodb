@@ -1,0 +1,72 @@
+
+use("StylishSteps");
+
+db.createCollection("Pedidos", {
+    validator: {
+        $jsonSchema: {
+            bsonType: 'object',
+            title: 'validacion de pedidos',
+            required: ['id_pedido', 'id_cliente', 'direccion_entrega', 'detalles_pedidos', 'fecha_pedido', 'estado_pedido', 'total'],
+            properties: {
+                id_pedido: {bsonType: 'int', description: 'Identificador único del pedido'},
+                id_cliente: {bsonType: 'int', description: 'ID del cliente que realiza el pedido'},
+                
+                direcciones: {
+                    bsonType: 'object',
+                    title: 'validacion de direccion de entrega',
+                    required: ['colonia', 'calle', 'cp', 'no_exterior', 'pais'],
+                    properties: {
+                        colonia: {bsonType: 'string', description: 'Colonia de entrega'},
+                        calle: {bsonType: 'string', description: 'Calle de entrega'},
+                        cp: {bsonType: 'string', description: 'Código postal'},
+                        no_exterior: {bsonType: 'string', description: 'Número exterior'},
+                        no_interior: {bsonType: 'string', description: 'Número interior'},
+                        pais: {bsonType: 'string', description: 'País de entrega'},
+                        estado: {bsonType: 'string', description: 'Estado de entrega'},
+                        descripcion: {bsonType: 'string', description: 'Descripción adicional de la dirección'},
+                        //paqueteria: {bsonType: 'string', description: 'Empresa de paquetería'}
+                    }
+                },
+                
+                detalles_pedidos: {
+                    bsonType: 'array',
+                    minItems: 1,
+                    items: {
+                        bsonType: 'object',
+                        required: ['id_producto', 'cantidad', 'precio_unitario', 'descuento'],
+                        properties: {
+                            //id_producto: {bsonType: 'int', description: 'ID del producto'},
+                            //cantidad: {bsonType: 'int', minimum: 1, description: 'Cantidad del producto en el pedido'},
+                            total: {bsonType: 'double', description: 'Monto total del pedido'},
+                            subtotal: {bsonType: 'double', description: 'Monto subtotal del pedido'},
+                            precio_unitario: {bsonType: 'double', description: 'Precio por unidad del producto'},
+                            descuento: {bsonType: 'double', description: 'Descuento aplicado al producto'}
+                        }
+                    }
+                },
+                
+                devoluciones: {
+                    bsonType: 'array',
+                    items: {
+                        bsonType: 'object',
+                        required: ['fecha_devolucion', 'razon_devolucion', 'estado_devolucion'],
+                        properties: {
+                            fecha_devolucion: {bsonType: 'date', description: 'Fecha de la devolución'},
+                            razon_devolucion: {bsonType: 'string', description: 'Razón de la devolución'},
+                            estado_devolucion: {bsonType: 'string', description: 'Estado de la devolución'}
+                        }
+                    }
+                },
+                
+                fecha_pedido: {bsonType: 'date', description: 'Fecha en la que se realizó el pedido'},
+                estado_pedido: {bsonType: 'string', description: 'Estado del pedido (e.g., "Pendiente", "Enviado", "Entregado")'},
+                total: {bsonType: 'double', description: 'Monto total del pedido'}
+            }
+        }
+    }
+})
+
+db.Pedidos.createIndex(
+    {id_cliente: 1,id_pedido:1}, 
+    {unique: true}
+)

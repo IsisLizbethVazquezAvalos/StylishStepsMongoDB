@@ -24,7 +24,6 @@ db.createCollection("Pedidos", {
                         pais: {bsonType: 'string', description: 'País de entrega'},
                         estado: {bsonType: 'string', description: 'Estado de entrega'},
                         descripcion: {bsonType: 'string', description: 'Descripción adicional de la dirección'},
-                        //paqueteria: {bsonType: 'string', description: 'Empresa de paquetería'}
                     }
                 },
                 
@@ -35,10 +34,10 @@ db.createCollection("Pedidos", {
                         bsonType: 'object',
                         required: ['id_producto', 'cantidad', 'precio_unitario', 'descuento'],
                         properties: {
-                            //id_producto: {bsonType: 'int', description: 'ID del producto'},
-                            //cantidad: {bsonType: 'int', minimum: 1, description: 'Cantidad del producto en el pedido'},
-                            total: {bsonType: 'double', description: 'Monto total del pedido'},
-                            subtotal: {bsonType: 'double', description: 'Monto subtotal del pedido'},
+                            id_producto: {bsonType: 'int', description: 'ID del producto'},
+                            cantidad: {bsonType: 'int', minimum: 1, description: 'Cantidad del producto en el pedido'},
+                            //total: {bsonType: 'double', description: 'Monto total del pedido'},
+                            //subtotal: {bsonType: 'double', description: 'Monto subtotal del pedido'},
                             precio_unitario: {bsonType: 'double', description: 'Precio por unidad del producto'},
                             descuento: {bsonType: 'double', description: 'Descuento aplicado al producto'}
                         }
@@ -66,7 +65,7 @@ db.createCollection("Pedidos", {
     }
 })
 
-db.Pedidos.createIndex(
-    {id_cliente: 1,id_pedido:1}, 
-    {unique: true}
-)
+// db.Pedidos.createIndex(
+//     {id_cliente: 1,id_pedido:1}, 
+//     {unique: true}
+// )

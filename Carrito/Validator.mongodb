@@ -19,7 +19,7 @@ db.createCollection("Carrito", {
                         properties: {
                             id_producto: {bsonType: 'int', description: 'ID del producto agregado'},
                             nombre_producto: {bsonType: 'string', description: 'Nombre del producto'},
-                            cantidad: {bsonType: 'int', minimum: 1, description: 'Cantidad de productos'},
+                            //cantidad: {bsonType: 'int', minimum: 1, description: 'Cantidad de productos'},
                             precio: {bsonType: 'double', description: 'Precio por unidad del producto'},
                             img_producto: {bsonType: 'string', description: 'Imagen del producto'}
                         }
@@ -32,7 +32,7 @@ db.createCollection("Carrito", {
 })
 
 
-db.Carrito.createIndex(
-    {id_cliente: 1}, 
-    {unique: true}
-)
+// db.Carrito.createIndex(
+//     {id_cliente: 1}, 
+//     {unique: true}
+// )

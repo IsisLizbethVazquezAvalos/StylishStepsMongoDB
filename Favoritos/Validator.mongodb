@@ -17,7 +17,7 @@ db.createCollection("Favoritos", {
     }
 })
 
-db.Favoritos.createIndex(
-    {id_cliente: 1, id_producto: 1}, 
-    {unique: true}
-)
+// db.Favoritos.createIndex(
+//     {id_cliente: 1, id_producto: 1}, 
+//     {unique: true}
+// )

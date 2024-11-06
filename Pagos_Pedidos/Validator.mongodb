@@ -12,13 +12,13 @@ db.createCollection("Pagos_Pedidos", {
                 id_pedido: {bsonType: 'int', description: 'ID del pedido al que corresponde el pago'},
                 fecha_pago: {bsonType: 'date', description: 'Fecha en la que se realizó el pago'},
                 monto_pago: {bsonType: 'double', description: 'Monto total pagado'},
-                //metodo_pago: {bsonType: 'string', description: 'Método de pago utilizado'}
+                metodo_pago: {bsonType: 'string', description: 'Método de pago utilizado'}
             }
         }
     }
 })
 
-db.Pagos_Pedidos.createIndex(
-    {id_pago: 1,id_pedido:1}, 
-    {unique: true}
-)
+// db.Pagos_Pedidos.createIndex(
+//     {id_pago: 1,id_pedido:1}, 
+//     {unique: true}
+// )

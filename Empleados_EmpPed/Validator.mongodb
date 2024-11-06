@@ -32,7 +32,7 @@ db.createCollection("Empleados", {
     }
 })
 
-db.Empleados.createIndex(
-    {id_empleado: 1,id_pedido:1, id_empleado_pedido:1}, 
-    {unique: true}
-)
+// db.Empleados.createIndex(
+//     {id_empleado: 1,id_pedido:1, id_empleado_pedido:1}, 
+//     {unique: true}
+// )

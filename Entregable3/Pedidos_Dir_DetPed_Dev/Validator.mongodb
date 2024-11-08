@@ -1,0 +1,68 @@
+
+use("StylishSteps");
+
+db.createCollection("Pedidos", {
+    validator: {
+        $jsonSchema: {
+            bsonType: 'object',
+            title: 'validacion de pedidos',
+            required: ['id_pedido', 'id_cliente'],
+            properties: {
+                id_pedido: {bsonType: 'int', description: 'Identificador único del pedido'},
+                id_cliente: {bsonType: 'int', description: 'ID del cliente que realiza el pedido'},
+                
+                direcciones: {
+                    bsonType: 'object',
+                    title: 'validacion de direccion de entrega',
+                    required: ['colonia', 'calle', 'cp', 'no_exterior'],
+                    properties: {
+                        colonia: {bsonType: 'string', description: 'Colonia de entrega'},
+                        calle: {bsonType: 'string', description: 'Calle de entrega'},
+                        cp: {bsonType: 'int', description: 'Código postal'},
+                        no_exterior: {bsonType: 'int', description: 'Número exterior'},
+                        no_interior: {bsonType: 'int', description: 'Número interior'},
+                        descripcion: {bsonType: 'string', description: 'Descripción adicional de la dirección'},
+                    }
+                },
+                
+                detalles_pedidos: {
+                    bsonType: 'array',
+                    minItems: 1,
+                    items: {
+                        bsonType: 'object',
+                        required: [ 'cantidad', 'precio_unitario', 'descuento'],
+                        properties: {
+                            cantidad: {bsonType: 'int', minimum: 1, description: 'Cantidad del producto en el pedido'},
+                            //total: {bsonType: 'double', description: 'Monto total del pedido'},
+                            //subtotal: {bsonType: 'double', description: 'Monto subtotal del pedido'},
+                            precio_unitario: {bsonType: 'int', description: 'Precio por unidad del producto'},
+                            descuento: {bsonType: 'int', description: 'Descuento aplicado al producto'}
+                        }
+                    }
+                },
+                
+                devoluciones: {
+                    bsonType: 'array',
+                    items: {
+                        bsonType: 'object',
+                        required: ['fecha_devolucion', 'razon_devolucion', 'estado_devolucion'],
+                        properties: {
+                            fecha_devolucion: {bsonType: 'string', description: 'Fecha de la devolución'},
+                            razon_devolucion: {bsonType: 'string', description: 'Razón de la devolución'},
+                            estado_devolucion: {bsonType: 'string', description: 'Estado de la devolución'}
+                        }
+                    }
+                },
+                
+                fecha_pedido: {bsonType: 'string', description: 'Fecha en la que se realizó el pedido'},
+                estado_pedido: {bsonType: 'string', description: 'Estado del pedido (e.g., "Pendiente", "Enviado", "Entregado")'},
+                total: {bsonType: 'int', description: 'Monto total del pedido'}
+            }
+        }
+    }
+})
+
+// db.Pedidos.createIndex(
+//     {id_cliente: 1,id_pedido:1}, 
+//     {unique: true}
+// )

@@ -1,0 +1,246 @@
+use("StylishSteps");
+
+db.Empleados.insertMany(
+    [
+        {
+            "id_empleado": 1,
+            "nombre": "Pedro",
+            "apellidos": "Lopez",
+            "telefono": 555123456,
+            "empleados_pedidos": [
+                {
+                    "fecha_asignacion": "2024-10-09",
+                    "rol_pedido": "Suajeador"
+                }
+            ]
+        },
+        {
+            "id_empleado": 2,
+            "nombre": "Laura",
+            "apellidos": "Sanchez",
+            "telefono": 555234567,
+            "empleados_pedidos": [
+                {
+                    "fecha_asignacion": "2024-10-09",
+                    "rol_pedido": "Encorrellador"
+                }
+            ]
+        },
+        {
+            "id_empleado": 3,
+            "nombre": "Raul",
+            "apellidos": "Hernandez",
+            "telefono": 555345678,
+            "empleados_pedidos": [
+                {
+                    "fecha_asignacion": "2024-10-09",
+                    "rol_pedido": "Forjador"
+                }
+            ]
+        },
+        {
+            "id_empleado": 4,
+            "nombre": "Paola",
+            "apellidos": "Gomez",
+            "telefono": 555456789,
+            "empleados_pedidos": [
+                {
+                    "fecha_asignacion": "2024-10-09",
+                    "rol_pedido": "Empacador"
+                }
+            ]
+        },
+        {
+            "id_empleado": 5,
+            "nombre": "Javier",
+            "apellidos": "Ortega",
+            "telefono": 555567890,
+            "empleados_pedidos": [
+                {
+                    "fecha_asignacion": "2024-10-09",
+                    "rol_pedido": "Asentador"
+                }
+            ]
+        },
+        {
+            "id_empleado": 6,
+            "nombre": "Sandra",
+            "apellidos": "Morales",
+            "telefono": 555678901,
+            "empleados_pedidos": [
+                {
+                    "fecha_asignacion": "2024-10-09",
+                    "rol_pedido": "Arreglador"
+                }
+            ]
+        },
+        {
+            "id_empleado": 7,
+            "nombre": "Oscar",
+            "apellidos": "Mendoza",
+            "telefono": 555789012,
+            "empleados_pedidos": [
+                {
+                    "fecha_asignacion": "2024-10-09",
+                    "rol_pedido": "Encorrellador"
+                }
+            ]
+        },
+        {
+            "id_empleado": 8,
+            "nombre": "Claudia",
+            "apellidos": "Ruiz",
+            "telefono": 555890123,
+            "empleados_pedidos": [
+                {
+                    "fecha_asignacion": "2024-10-09",
+                    "rol_pedido": "Suajeador"
+                }
+            ]
+        },
+        {
+            "id_empleado": 9,
+            "nombre": "Jose",
+            "apellidos": "Vargas",
+            "telefono": 555901234,
+            "empleados_pedidos": [
+                {
+                    "fecha_asignacion": "2024-10-09",
+                    "rol_pedido": "Forjador"
+                }
+            ]
+        },
+        {
+            "id_empleado": 10,
+            "nombre": "Rosa",
+            "apellidos": "N unez",
+            "telefono": 555012345,
+            "empleados_pedidos": [
+                {
+                    "fecha_asignacion": "2024-10-09",
+                    "rol_pedido": "Empacador"
+                }
+            ]
+        },
+        {
+            "id_empleado": 11,
+            "nombre": "Hector",
+            "apellidos": "Cabrera",
+            "telefono": 555123456,
+            "empleados_pedidos": [
+                {
+                    "fecha_asignacion": "2024-10-09",
+                    "rol_pedido": "Asentador"
+                }
+            ]
+        },
+        {
+            "id_empleado": 12,
+            "nombre": "Ana",
+            "apellidos": "Castillo",
+            "telefono": 555234567,
+            "empleados_pedidos": [
+                {
+                    "fecha_asignacion": "2024-10-09",
+                    "rol_pedido": "Arreglador"
+                }
+            ]
+        },
+        {
+            "id_empleado": 13,
+            "nombre": "Luis",
+            "apellidos": "Molina",
+            "telefono": 555345678,
+            "empleados_pedidos": [
+                {
+                    "fecha_asignacion": "2024-10-09",
+                    "rol_pedido": "Cortador"
+                }
+            ]
+        },
+        {
+            "id_empleado": 14,
+            "nombre": "Beatriz",
+            "apellidos": "Iglesias",
+            "telefono": 555456789,
+            "empleados_pedidos": [
+                {
+                    "fecha_asignacion": "2024-10-09",
+                    "rol_pedido": "Remachador"
+                }
+            ]
+        },
+        {
+            "id_empleado": 15,
+            "nombre": "Andr s",
+            "apellidos": "Pineda",
+            "telefono": 555567890,
+            "empleados_pedidos": [
+                {
+                    "fecha_asignacion": "2024-10-09",
+                    "rol_pedido": "Pulidor"
+                }
+            ]
+        },
+        {
+            "id_empleado": 16,
+            "nombre": "Esteban",
+            "apellidos": "Ramos",
+            "telefono": 555678901,
+            "empleados_pedidos": [
+                {
+                    "fecha_asignacion": "2024-10-09",
+                    "rol_pedido": "Pespuntador"
+                }
+            ]
+        },
+        {
+            "id_empleado": 17,
+            "nombre": "Carla",
+            "apellidos": "Salinas",
+            "telefono": 555789012,
+            "empleados_pedidos": [
+                {
+                    "fecha_asignacion": "2024-10-09",
+                    "rol_pedido": "Encorrellador"
+                }
+            ]
+        },
+        {
+            "id_empleado": 18,
+            "nombre": "Diego",
+            "apellidos": "Meza",
+            "telefono": 555890123,
+            "empleados_pedidos": [
+                {
+                    "fecha_asignacion": "2024-10-09",
+                    "rol_pedido": "Montador"
+                }
+            ]
+        },
+        {
+            "id_empleado": 19,
+            "nombre": "Silvia",
+            "apellidos": "Reyes",
+            "telefono": 555901234,
+            "empleados_pedidos": [
+                {
+                    "fecha_asignacion": "2024-10-09",
+                    "rol_pedido": "Lustrador"
+                }
+            ]
+        },
+        {
+            "id_empleado": 20,
+            "nombre": "Daniel",
+            "apellidos": "Romero",
+            "telefono": 555012345,
+            "empleados_pedidos": [
+                {
+                    "fecha_asignacion": "2024-10-09",
+                    "rol_pedido": "Arreglador"
+                }
+            ]
+        }
+    ]
+)

@@ -1,0 +1,24 @@
+use("StylishSteps");
+
+db.createCollection("Carrito", {
+    validator: {
+        $jsonSchema: {
+            bsonType: 'object',
+            title: 'validacion de Carrito',
+            required: ['id_cliente', 'id_producto'],
+            properties: {
+                id_carrito: {bsonType: 'int', description: 'Identificador único del favorito'},
+                id_cliente: {bsonType: 'int', description: 'ID del cliente que marca el producto como favorito'},
+                id_producto: {bsonType: 'int', description: 'ID del producto marcado como favorito'},
+                nombre_producto: {bsonType: 'string', description: 'Nombre del producto'},
+                precio: {bsonType: 'int', description: 'Precio por unidad del producto'},
+                img_producto: {bsonType: 'string', description: 'Imagen del producto'}
+            }
+        }
+    }
+})
+
+// db.Favoritos.createIndex(
+//     {id_cliente: 1, id_producto: 1, id_carrito: 1}, 
+//     {unique: true}
+// )

@@ -1,0 +1,38 @@
+
+use("StylishSteps");
+
+db.createCollection("Empleados", {
+    validator: {
+        $jsonSchema: {
+            bsonType: 'object',
+            title: 'validacion de empleados',
+            required: ['id_empleado'],
+            properties: {
+                id_empleado: {bsonType: 'int', description: 'Identificador único del empleado'},
+                //id_pedido: {bsonType: 'int', description: 'ID del pedido asignado al empleado'},
+                nombre: {bsonType: 'string', description: 'Nombre del empleado'},
+                apellidos: {bsonType: 'string', description: 'Apellidos del empleado'},
+                telefono: {bsonType: 'int', description: 'Número de teléfono del empleado'},
+                
+                empleados_pedidos: {
+                    bsonType: 'array',
+                    minItems: 1,
+                    items: {
+                        bsonType: 'object',
+                        required: ['fecha_asignacion', 'rol_pedido'],
+                        properties: {
+                            //id_empleado_pedido: {bsonType: 'int', description: 'ID del pedido asignado al empleado'},
+                            fecha_asignacion: {bsonType: 'string', description: 'Fecha en la que se asigna el pedido al empleado'},
+                            rol_pedido: {bsonType: 'string', description: 'Rol del empleado en el pedido (e.g., "Preparador", "Supervisor")'}
+                        }
+                    }
+                }
+            }
+        }
+    }
+})
+
+// db.Empleados.createIndex(
+//     {id_empleado: 1,id_pedido:1, id_empleado_pedido:1}, 
+//     {unique: true}
+// )

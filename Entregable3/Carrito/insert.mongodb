@@ -1,0 +1,118 @@
+use("StylishSteps");
+
+db.Carrito.insertMany(
+    [
+        {
+            "id_carrito": 1,
+            "id_cliente": 1,
+            "id_producto": 1,
+            "nombre_producto": "Huarache Bordado",
+            "precio": 1200,
+            "img_producto": ""
+        },
+        {
+            "id_carrito": 2,
+            "id_cliente": 2,
+            "id_producto": 2,
+            "nombre_producto": "Huarache Troquelado",
+            "precio": 600,
+            "img_producto": ""
+        },
+        {
+            "id_carrito": 3,
+            "id_cliente": 3,
+            "id_producto": 3,
+            "nombre_producto": "Huarache L ser",
+            "precio": 1500,
+            "img_producto": ""
+        },
+        {
+            "id_carrito": 4,
+            "id_cliente": 4,
+            "id_producto": 4,
+            "nombre_producto": "Huarache Alpargata",
+            "precio": 1800,
+            "img_producto": ""
+        },
+        {
+            "id_carrito": 5,
+            "id_cliente": 5,
+            "id_producto": 5,
+            "nombre_producto": "Huarache Tal n Pulsera",
+            "precio": 900,
+            "img_producto": ""
+        },
+        {
+            "id_carrito": 6,
+            "id_cliente": 6,
+            "id_producto": 6,
+            "nombre_producto": "Huarache Tradicional",
+            "precio": 1300,
+            "img_producto": ""
+        },
+        {
+            "id_carrito": 7,
+            "id_cliente": 7,
+            "id_producto": 7,
+            "nombre_producto": "Huarache de Tac n",
+            "precio": 1600,
+            "img_producto": ""
+        },
+        {
+            "id_carrito": 8,
+            "id_cliente": 8,
+            "id_producto": 8,
+            "nombre_producto": "Huarache Chancla",
+            "precio": 300,
+            "img_producto": ""
+        },
+        {
+            "id_carrito": 9,
+            "id_cliente": 9,
+            "id_producto": 1,
+            "nombre_producto": "Huarache Bordado",
+            "precio": 1200,
+            "img_producto": ""
+        },
+        {
+            "id_carrito": 10,
+            "id_cliente": 10,
+            "id_producto": 2,
+            "nombre_producto": "Huarache Troquelado",
+            "precio": 600,
+            "img_producto": ""
+        },
+        {
+            "id_carrito": 11,
+            "id_cliente": 11,
+            "id_producto": 3,
+            "nombre_producto": "Huarache L ser",
+            "precio": 1500,
+            "img_producto": ""
+        },
+        {
+            "id_carrito": 12,
+            "id_cliente": 12,
+            "id_producto": 4,
+            "nombre_producto": "Huarache Alpargata",
+            "precio": 1800,
+            "img_producto": ""
+        },
+        {
+            "id_carrito": 13,
+            "id_cliente": 13,
+            "id_producto": 5,
+            "nombre_producto": "Huarache Tal n Pulsera",
+            "precio": 900,
+            "img_producto": ""
+        },
+        {
+            "id_carrito": 14,
+            "id_cliente": 14,
+            "id_producto": 6,
+            "nombre_producto": "Huarache Tradicional",
+            "precio": 1300,
+            "img_producto": ""
+        }
+    ]
+)

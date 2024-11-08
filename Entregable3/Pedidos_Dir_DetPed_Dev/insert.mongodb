@@ -1,0 +1,586 @@
+use("StylishSteps");
+
+db.Pedidos.insertMany(
+    [
+        {
+            "id_pedido": 1,
+            "id_cliente": 1,
+            "direcciones": {
+                "colonia": "Centro",
+                "calle": "Av. Insurgentes 123",
+                "cp": 12345,
+                "no_exterior": 101,
+                "no_interior": 1,
+                "descripcion": "Departamento"
+            },
+            "detalles_pedidos": [
+                {
+                    "cantidad": 2,
+                    "precio_unitario": 800,
+                    "descuento": 0
+                }
+            ],
+            "devoluciones": [
+                {
+                    "fecha_devolucion": "2024-10-09",
+                    "razon_devolucion": "Producto defectuoso",
+                    "estado_devolucion": "PROCESANDO"
+                }
+            ],
+            "fecha_pedido": "2024-10-09",
+            "estado_pedido": "PROCESANDO",
+            "total": 1600
+        },
+        {
+            "id_pedido": 2,
+            "id_cliente": 2,
+            "direcciones": {
+                "colonia": "Roma",
+                "calle": "Calle Reforma 456",
+                "cp": 67890,
+                "no_exterior": 202,
+                "no_interior": 2,
+                "descripcion": "Apto"
+            },
+            "detalles_pedidos": [
+                {
+                    "cantidad": 1,
+                    "precio_unitario": 500,
+                    "descuento": 0
+                }
+            ],
+            "devoluciones": [
+                {
+                    "fecha_devolucion": "2024-10-09",
+                    "razon_devolucion": "No era el tama o correcto",
+                    "estado_devolucion": "DEVUELTO"
+                }
+            ],
+            "fecha_pedido": "2024-10-09",
+            "estado_pedido": "ENTREGADO",
+            "total": 500
+        },
+        {
+            "id_pedido": 3,
+            "id_cliente": 3,
+            "direcciones": {
+                "colonia": "Condesa",
+                "calle": "Av. Ju rez 789",
+                "cp": 23456,
+                "no_exterior": 303,
+                "no_interior": 3,
+                "descripcion": "Oficina"
+            },
+            "detalles_pedidos": [
+                {
+                    "cantidad": 3,
+                    "precio_unitario": 1200,
+                    "descuento": 0
+                }
+            ],
+            "devoluciones": [
+                {
+                    "fecha_devolucion": "2024-10-09",
+                    "razon_devolucion": "Cambio de opini n",
+                    "estado_devolucion": "DEVUELTO"
+                }
+            ],
+            "fecha_pedido": "2024-10-09",
+            "estado_pedido": "DEVUELTO",
+            "total": 3600
+        },
+        {
+            "id_pedido": 4,
+            "id_cliente": 4,
+            "direcciones": {
+                "colonia": "Polanco",
+                "calle": "Calle Madero 321",
+                "cp": 34567,
+                "no_exterior": 404,
+                "no_interior": 4,
+                "descripcion": "Local"
+            },
+            "detalles_pedidos": [
+                {
+                    "cantidad": 1,
+                    "precio_unitario": 1500,
+                    "descuento": 0
+                }
+            ],
+            "devoluciones": [
+                {
+                    "fecha_devolucion": "2024-10-09",
+                    "razon_devolucion": "Huarache lleg  da ado",
+                    "estado_devolucion": "DEVOLVIENDO"
+                }
+            ],
+            "fecha_pedido": "2024-10-09",
+            "estado_pedido": "CANCELADO",
+            "total": 1500
+        },
+        {
+            "id_pedido": 5,
+            "id_cliente": 5,
+            "direcciones": {
+                "colonia": "Santa Fe",
+                "calle": "Av. de los Insurgentes 654",
+                "cp": 45678,
+                "no_exterior": 505,
+                "no_interior": 5,
+                "descripcion": "Sucursal"
+            },
+            "detalles_pedidos": [
+                {
+                    "cantidad": 4,
+                    "precio_unitario": 1000,
+                    "descuento": 0
+                }
+            ],
+            "devoluciones": [
+                {
+                    "fecha_devolucion": "2024-10-09",
+                    "razon_devolucion": "Recib  el producto incorrecto",
+                    "estado_devolucion": "DEVOLVIENDO"
+                }
+            ],
+            "fecha_pedido": "2024-10-09",
+            "estado_pedido": "RETRASADO",
+            "total": 4000
+        },
+        {
+            "id_pedido": 6,
+            "id_cliente": 6,
+            "direcciones": {
+                "colonia": "N poles",
+                "calle": "Calle 5 de Febrero 987",
+                "cp": 56789,
+                "no_exterior": 606,
+                "no_interior": 6,
+                "descripcion": "Oficina"
+            },
+            "detalles_pedidos": [
+                {
+                    "cantidad": 2,
+                    "precio_unitario": 600,
+                    "descuento": 0
+                }
+            ],
+            "devoluciones": [
+                {
+                    "fecha_devolucion": "2024-10-09",
+                    "razon_devolucion": "Desistimiento de compra",
+                    "estado_devolucion": "DEVUELTO"
+                }
+            ],
+            "fecha_pedido": "2024-10-09",
+            "estado_pedido": "PROCESANDO",
+            "total": 1200
+        },
+        {
+            "id_pedido": 7,
+            "id_cliente": 7,
+            "direcciones": {
+                "colonia": "Lomas",
+                "calle": "Av. de la Reforma 123",
+                "cp": 67890,
+                "no_exterior": 707,
+                "no_interior": 7,
+                "descripcion": "Apto"
+            },
+            "detalles_pedidos": [
+                {
+                    "cantidad": 1,
+                    "precio_unitario": 1800,
+                    "descuento": 0
+                }
+            ],
+            "devoluciones": [
+                {
+                    "fecha_devolucion": "2024-10-09",
+                    "razon_devolucion": "Problemas con el color",
+                    "estado_devolucion": "PROCESANDO"
+                }
+            ],
+            "fecha_pedido": "2024-10-09",
+            "estado_pedido": "ENTREGADO",
+            "total": 1800
+        },
+        {
+            "id_pedido": 8,
+            "id_cliente": 8,
+            "direcciones": {
+                "colonia": " lvaro Obreg n",
+                "calle": "Calle 16 de Septiembre 345",
+                "cp": 78901,
+                "no_exterior": 808,
+                "no_interior": 8,
+                "descripcion": "Sucursal"
+            },
+            "detalles_pedidos": [
+                {
+                    "cantidad": 5,
+                    "precio_unitario": 1400,
+                    "descuento": 0
+                }
+            ],
+            "devoluciones": [
+                {
+                    "fecha_devolucion": "2024-10-09",
+                    "razon_devolucion": "Error en el pedido",
+                    "estado_devolucion": "DEVUELTO"
+                }
+            ],
+            "fecha_pedido": "2024-10-09",
+            "estado_pedido": "DEVOLVIENDO",
+            "total": 7000
+        },
+        {
+            "id_pedido": 9,
+            "id_cliente": 9,
+            "direcciones": {
+                "colonia": "Tacubaya",
+                "calle": "Av. Chapultepec 678",
+                "cp": 89012,
+                "no_exterior": 909,
+                "no_interior": 9,
+                "descripcion": "Departamento"
+            },
+            "detalles_pedidos": [
+                {
+                    "cantidad": 3,
+                    "precio_unitario": 700,
+                    "descuento": 0
+                }
+            ],
+            "devoluciones": [
+                {
+                    "fecha_devolucion": "2024-10-09",
+                    "razon_devolucion": "Tama o incorrecto",
+                    "estado_devolucion": "PROCESANDO"
+                }
+            ],
+            "fecha_pedido": "2024-10-09",
+            "estado_pedido": "RETRASADO",
+            "total": 2100
+        },
+        {
+            "id_pedido": 10,
+            "id_cliente": 10,
+            "direcciones": {
+                "colonia": "Coyoac n",
+                "calle": "Calle Libertad 890",
+                "cp": 90123,
+                "no_exterior": 1010,
+                "no_interior": 10,
+                "descripcion": "Oficina"
+            },
+            "detalles_pedidos": [
+                {
+                    "cantidad": 2,
+                    "precio_unitario": 300,
+                    "descuento": 0
+                }
+            ],
+            "devoluciones": [
+                {
+                    "fecha_devolucion": "2024-10-09",
+                    "razon_devolucion": "Producto no es lo que esperaba",
+                    "estado_devolucion": "DEVUELTO"
+                }
+            ],
+            "fecha_pedido": "2024-10-09",
+            "estado_pedido": "CANCELADO",
+            "total": 600
+        },
+        {
+            "id_pedido": 11,
+            "id_cliente": 11,
+            "direcciones": {
+                "colonia": "Centro",
+                "calle": "Av. Insurgentes 123",
+                "cp": 12345,
+                "no_exterior": 101,
+                "no_interior": 1,
+                "descripcion": "Departamento"
+            },
+            "detalles_pedidos": [
+                {
+                    "cantidad": 1,
+                    "precio_unitario": 800,
+                    "descuento": 0
+                }
+            ],
+            "devoluciones": [
+                {
+                    "fecha_devolucion": "2024-10-09",
+                    "razon_devolucion": "Huarache lleg  da ado",
+                    "estado_devolucion": "DEVOLVIENDO"
+                }
+            ],
+            "fecha_pedido": "2024-10-09",
+            "estado_pedido": "PROCESANDO",
+            "total": 800
+        },
+        {
+            "id_pedido": 12,
+            "id_cliente": 12,
+            "direcciones": {
+                "colonia": "Roma",
+                "calle": "Calle Reforma 456",
+                "cp": 67890,
+                "no_exterior": 202,
+                "no_interior": 2,
+                "descripcion": "Apto"
+            },
+            "detalles_pedidos": [
+                {
+                    "cantidad": 2,
+                    "precio_unitario": 500,
+                    "descuento": 0
+                }
+            ],
+            "devoluciones": [
+                {
+                    "fecha_devolucion": "2024-10-09",
+                    "razon_devolucion": "Cambio de opini n",
+                    "estado_devolucion": "DEVUELTO"
+                }
+            ],
+            "fecha_pedido": "2024-10-09",
+            "estado_pedido": "ENTREGADO",
+            "total": 1000
+        },
+        {
+            "id_pedido": 13,
+            "id_cliente": 13,
+            "direcciones": {
+                "colonia": "Condesa",
+                "calle": "Av. Ju rez 789",
+                "cp": 23456,
+                "no_exterior": 303,
+                "no_interior": 3,
+                "descripcion": "Oficina"
+            },
+            "detalles_pedidos": [
+                {
+                    "cantidad": 1,
+                    "precio_unitario": 1200,
+                    "descuento": 0
+                }
+            ],
+            "devoluciones": [
+                {
+                    "fecha_devolucion": "2024-10-09",
+                    "razon_devolucion": "Recib  el producto incorrecto",
+                    "estado_devolucion": "DEVUELTO"
+                }
+            ],
+            "fecha_pedido": "2024-10-09",
+            "estado_pedido": "DEVUELTO",
+            "total": 1200
+        },
+        {
+            "id_pedido": 14,
+            "id_cliente": 14,
+            "direcciones": {
+                "colonia": "Polanco",
+                "calle": "Calle Madero 321",
+                "cp": 34567,
+                "no_exterior": 404,
+                "no_interior": 4,
+                "descripcion": "Local"
+            },
+            "detalles_pedidos": [
+                {
+                    "cantidad": 4,
+                    "precio_unitario": 1500,
+                    "descuento": 0
+                }
+            ],
+            "devoluciones": [
+                {
+                    "fecha_devolucion": "2024-10-09",
+                    "razon_devolucion": "Producto defectuoso",
+                    "estado_devolucion": "DEVOLVIENDO"
+                }
+            ],
+            "fecha_pedido": "2024-10-09",
+            "estado_pedido": "RETRASADO",
+            "total": 6000
+        },
+        {
+            "id_pedido": 15,
+            "id_cliente": 15,
+            "direcciones": {
+                "colonia": "Santa Fe",
+                "calle": "Av. de los Insurgentes 654",
+                "cp": 45678,
+                "no_exterior": 505,
+                "no_interior": 5,
+                "descripcion": "Sucursal"
+            },
+            "detalles_pedidos": [
+                {
+                    "cantidad": 2,
+                    "precio_unitario": 1000,
+                    "descuento": 0
+                }
+            ],
+            "devoluciones": [
+                {
+                    "fecha_devolucion": "2024-10-09",
+                    "razon_devolucion": "No era el tama o correcto",
+                    "estado_devolucion": "DEVUELTO"
+                }
+            ],
+            "fecha_pedido": "2024-10-09",
+            "estado_pedido": "PROCESANDO",
+            "total": 2000
+        },
+        {
+            "id_pedido": 16,
+            "id_cliente": 16,
+            "direcciones": {
+                "colonia": "N poles",
+                "calle": "Calle 5 de Febrero 987",
+                "cp": 56789,
+                "no_exterior": 606,
+                "no_interior": 6,
+                "descripcion": "Oficina"
+            },
+            "detalles_pedidos": [
+                {
+                    "cantidad": 3,
+                    "precio_unitario": 600,
+                    "descuento": 0
+                }
+            ],
+            "devoluciones": [
+                {
+                    "fecha_devolucion": "2024-10-09",
+                    "razon_devolucion": "Desistimiento de compra",
+                    "estado_devolucion": "DEVUELTO"
+                }
+            ],
+            "fecha_pedido": "2024-10-09",
+            "estado_pedido": "DEVOLVIENDO",
+            "total": 2400
+        },
+        {
+            "id_pedido": 17,
+            "id_cliente": 17,
+            "direcciones": {
+                "colonia": "Lomas",
+                "calle": "Av. de la Reforma 123",
+                "cp": 67890,
+                "no_exterior": 707,
+                "no_interior": 7,
+                "descripcion": "Apto"
+            },
+            "detalles_pedidos": [
+                {
+                    "cantidad": 1,
+                    "precio_unitario": 1800,
+                    "descuento": 0
+                }
+            ],
+            "devoluciones": [
+                {
+                    "fecha_devolucion": "2024-10-09",
+                    "razon_devolucion": "Problemas con el color",
+                    "estado_devolucion": "PROCESANDO"
+                }
+            ],
+            "fecha_pedido": "2024-10-09",
+            "estado_pedido": "ENTREGADO",
+            "total": 800
+        },
+        {
+            "id_pedido": 18,
+            "id_cliente": 18,
+            "direcciones": {
+                "colonia": " lvaro Obreg n",
+                "calle": "Calle 16 de Septiembre 345",
+                "cp": 78901,
+                "no_exterior": 808,
+                "no_interior": 8,
+                "descripcion": "Sucursal"
+            },
+            "detalles_pedidos": [
+                {
+                    "cantidad": 2,
+                    "precio_unitario": 1400,
+                    "descuento": 0
+                }
+            ],
+            "devoluciones": [
+                {
+                    "fecha_devolucion": "2024-10-09",
+                    "razon_devolucion": "Error en el pedido",
+                    "estado_devolucion": "DEVUELTO"
+                }
+            ],
+            "fecha_pedido": "2024-10-09",
+            "estado_pedido": "DEVUELTO",
+            "total": 1400
+        },
+        {
+            "id_pedido": 19,
+            "id_cliente": 19,
+            "direcciones": {
+                "colonia": "Tacubaya",
+                "calle": "Av. Chapultepec 678",
+                "cp": 89012,
+                "no_exterior": 909,
+                "no_interior": 9,
+                "descripcion": "Departamento"
+            },
+            "detalles_pedidos": [
+                {
+                    "cantidad": 5,
+                    "precio_unitario": 700,
+                    "descuento": 0
+                }
+            ],
+            "devoluciones": [
+                {
+                    "fecha_devolucion": "2024-10-09",
+                    "razon_devolucion": "Tama o incorrecto",
+                    "estado_devolucion": "PROCESANDO"
+                }
+            ],
+            "fecha_pedido": "2024-10-09",
+            "estado_pedido": "RETRASADO",
+            "total": 3500
+        },
+        {
+            "id_pedido": 20,
+            "id_cliente": 20,
+            "direcciones": {
+                "colonia": "Coyoac n",
+                "calle": "Calle Libertad 890",
+                "cp": 90123,
+                "no_exterior": 1010,
+                "no_interior": 10,
+                "descripcion": "Oficina"
+            },
+            "detalles_pedidos": [
+                {
+                    "cantidad": 3,
+                    "precio_unitario": 300,
+                    "descuento": 0
+                }
+            ],
+            "devoluciones": [
+                {
+                    "fecha_devolucion": "2024-10-09",
+                    "razon_devolucion": "Producto no es lo que esperaba",
+                    "estado_devolucion": "DEVUELTO"
+                }
+            ],
+            "fecha_pedido": "2024-10-09",
+            "estado_pedido": "CANCELADO",
+            "total": 900
+        }
+    ]
+)

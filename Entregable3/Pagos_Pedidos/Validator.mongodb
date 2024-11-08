@@ -1,0 +1,24 @@
+
+use("StylishSteps");
+
+db.createCollection("Pagos_Pedidos", {
+    validator: {
+        $jsonSchema: {
+            bsonType: 'object',
+            title: 'validacion de pagos pedidos',
+            required: ['id_pago', 'id_pedido', 'fecha_pago', 'monto_pago', 'metodo_pago'],
+            properties: {
+                id_pago: {bsonType: 'int', description: 'Identificador único del pago'},
+                id_pedido: {bsonType: 'int', description: 'ID del pedido al que corresponde el pago'},
+                fecha_pago: {bsonType: 'string', description: 'Fecha en la que se realizó el pago'},
+                monto_pago: {bsonType: 'int', description: 'Monto total pagado'},
+                metodo_pago: {bsonType: 'string', description: 'Método de pago utilizado'}
+            }
+        }
+    }
+})
+
+// db.Pagos_Pedidos.createIndex(
+//     {id_pago: 1,id_pedido:1}, 
+//     {unique: true}
+// )

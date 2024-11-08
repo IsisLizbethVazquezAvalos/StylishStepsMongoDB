@@ -1,0 +1,106 @@
+use("StylishSteps");
+
+db.Favoritos.insertMany(
+    [
+        {
+            "id_favorito": 1,
+            "id_cliente": 1,
+            "id_producto": 1
+        },
+        {
+            "id_favorito": 2,
+            "id_cliente": 2,
+            "id_producto": 2
+        },
+        {
+            "id_favorito": 3,
+            "id_cliente": 3,
+            "id_producto": 3
+        },
+        {
+            "id_favorito": 4,
+            "id_cliente": 4,
+            "id_producto": 4
+        },
+        {
+            "id_favorito": 5,
+            "id_cliente": 5,
+            "id_producto": 5
+        },
+        {
+            "id_favorito": 6,
+            "id_cliente": 6,
+            "id_producto": 6
+        },
+        {
+            "id_favorito": 7,
+            "id_cliente": 7,
+            "id_producto": 7
+        },
+        {
+            "id_favorito": 8,
+            "id_cliente": 8,
+            "id_producto": 8
+        },
+        {
+            "id_favorito": 9,
+            "id_cliente": 9,
+            "id_producto": 1
+        },
+        {
+            "id_favorito": 10,
+            "id_cliente": 10,
+            "id_producto": 2
+        },
+        {
+            "id_favorito": 11,
+            "id_cliente": 11,
+            "id_producto": 3
+        },
+        {
+            "id_favorito": 12,
+            "id_cliente": 12,
+            "id_producto": 4
+        },
+        {
+            "id_favorito": 13,
+            "id_cliente": 13,
+            "id_producto": 5
+        },
+        {
+            "id_favorito": 14,
+            "id_cliente": 14,
+            "id_producto": 6
+        },
+        {
+            "id_favorito": 15,
+            "id_cliente": 15,
+            "id_producto": 7
+        },
+        {
+            "id_favorito": 16,
+            "id_cliente": 16,
+            "id_producto": 8
+        },
+        {
+            "id_favorito": 17,
+            "id_cliente": 17,
+            "id_producto": 1
+        },
+        {
+            "id_favorito": 18,
+            "id_cliente": 18,
+            "id_producto": 2
+        },
+        {
+            "id_favorito": 19,
+            "id_cliente": 19,
+            "id_producto": 3
+        },
+        {
+            "id_favorito": 20,
+            "id_cliente": 20,
+            "id_producto": 4
+        }
+    ]
+)

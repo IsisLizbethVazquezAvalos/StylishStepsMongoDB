@@ -1,0 +1,146 @@
+use("StylishSteps");
+
+db.Pagos_Pedidos.insertMany(
+    [
+        {
+            "id_pago": 1,
+            "id_pedido": 1,
+            "fecha_pago": "2024-10-09",
+            "monto_pago": 1500,
+            "metodo_pago": "EFECTIVO"
+        },
+        {
+            "id_pago": 2,
+            "id_pedido": 2,
+            "fecha_pago": "2024-10-09",
+            "monto_pago": 2000,
+            "metodo_pago": "CREDITO"
+        },
+        {
+            "id_pago": 3,
+            "id_pedido": 3,
+            "fecha_pago": "2024-10-09",
+            "monto_pago": 2500,
+            "metodo_pago": "DEBITO"
+        },
+        {
+            "id_pago": 4,
+            "id_pedido": 4,
+            "fecha_pago": "2024-10-09",
+            "monto_pago": 1800,
+            "metodo_pago": "EFECTIVO"
+        },
+        {
+            "id_pago": 5,
+            "id_pedido": 5,
+            "fecha_pago": "2024-10-09",
+            "monto_pago": 2200,
+            "metodo_pago": "CREDITO"
+        },
+        {
+            "id_pago": 6,
+            "id_pedido": 6,
+            "fecha_pago": "2024-10-09",
+            "monto_pago": 1700,
+            "metodo_pago": "DEBITO"
+        },
+        {
+            "id_pago": 7,
+            "id_pedido": 7,
+            "fecha_pago": "2024-10-09",
+            "monto_pago": 1600,
+            "metodo_pago": "EFECTIVO"
+        },
+        {
+            "id_pago": 8,
+            "id_pedido": 8,
+            "fecha_pago": "2024-10-09",
+            "monto_pago": 2100,
+            "metodo_pago": "CREDITO"
+        },
+        {
+            "id_pago": 9,
+            "id_pedido": 9,
+            "fecha_pago": "2024-10-09",
+            "monto_pago": 2300,
+            "metodo_pago": "DEBITO"
+        },
+        {
+            "id_pago": 10,
+            "id_pedido": 10,
+            "fecha_pago": "2024-10-09",
+            "monto_pago": 1900,
+            "metodo_pago": "EFECTIVO"
+        },
+        {
+            "id_pago": 11,
+            "id_pedido": 11,
+            "fecha_pago": "2024-10-09",
+            "monto_pago": 2500,
+            "metodo_pago": "CREDITO"
+        },
+        {
+            "id_pago": 12,
+            "id_pedido": 12,
+            "fecha_pago": "2024-10-09",
+            "monto_pago": 2400,
+            "metodo_pago": "DEBITO"
+        },
+        {
+            "id_pago": 13,
+            "id_pedido": 13,
+            "fecha_pago": "2024-10-09",
+            "monto_pago": 2000,
+            "metodo_pago": "EFECTIVO"
+        },
+        {
+            "id_pago": 14,
+            "id_pedido": 14,
+            "fecha_pago": "2024-10-09",
+            "monto_pago": 2200,
+            "metodo_pago": "CREDITO"
+        },
+        {
+            "id_pago": 15,
+            "id_pedido": 15,
+            "fecha_pago": "2024-10-09",
+            "monto_pago": 2100,
+            "metodo_pago": "DEBITO"
+        },
+        {
+            "id_pago": 16,
+            "id_pedido": 16,
+            "fecha_pago": "2024-10-09",
+            "monto_pago": 1700,
+            "metodo_pago": "EFECTIVO"
+        },
+        {
+            "id_pago": 17,
+            "id_pedido": 17,
+            "fecha_pago": "2024-10-09",
+            "monto_pago": 2300,
+            "metodo_pago": "CREDITO"
+        },
+        {
+            "id_pago": 18,
+            "id_pedido": 18,
+            "fecha_pago": "2024-10-09",
+            "monto_pago": 1900,
+            "metodo_pago": "DEBITO"
+        },
+        {
+            "id_pago": 19,
+            "id_pedido": 19,
+            "fecha_pago": "2024-10-09",
+            "monto_pago": 1800,
+            "metodo_pago": "EFECTIVO"
+        },
+        {
+            "id_pago": 20,
+            "id_pedido": 20,
+            "fecha_pago": "2024-10-09",
+            "monto_pago": 2000,
+            "metodo_pago": "CREDITO"
+        }
+    ]
+)
